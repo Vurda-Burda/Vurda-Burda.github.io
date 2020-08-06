@@ -1904,9 +1904,18 @@ body {
         margin: 0 auto;
     }
 
+    .page_header {
+        padding: 40px;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
     .mobile_menu {
         display: block;
-        margin: 18px 0 0 235px;
+        margin: 18px 0 0 0;
         padding: 0;
         width: 80px;
         min-height: 30px;
@@ -1928,12 +1937,6 @@ body {
         outline: none;
     }
 
-    .page_header {
-        padding: 40px;
-        box-sizing: border-box;
-        width: 100%;
-    }
-
     .header_logo {
         margin: 0;
         padding: 0;
@@ -1942,7 +1945,7 @@ body {
     .website_page_list {
         display: none;
         width: 100%;
-        margin: 0;
+        margin: 13% 0 0 0;
         padding: 0;
         background-color: #ffffff;
     }
@@ -1995,14 +1998,14 @@ body {
 
     .website_list_basket {
         position: absolute;
-        top: 65px;
-        left: 330px;
+        top: 115px;
+        left: 165px;
     }
 
     .website_search {
         position: absolute;
-        top: 67px;
-        left: 240px;
+        top: 115px;
+        left: 75px;
     }
 
     .page_header_content {
@@ -2016,15 +2019,14 @@ body {
     }
 
     .page_new_project {
+        width: 100%;
         flex-wrap: wrap;
         padding: 10px 0 0 0;
         justify-content: space-around;
         box-sizing: border-box;
+        margin: 0;
     }
 
-    .page_new_project_content {
-        width: 46%;
-    }
 
     .page_new_project_content:nth-child(3) {
         margin: 70px 0 70px 0;
