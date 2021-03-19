@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    background: #2e353d;
+}
+
+.menuButton {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background: #007b32;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menuButton:hover {
+    background: #009641;
+}
+
+#game {
+    border-collapse: collapse;
+    margin: 2% auto 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+}
+
+td.cell {
+    width: 20px;
+    height: 20px;
+    border: 1px dotted #eee;
+    border-collapse: collapse;
+}
+
+.food {
+    background: #00d021;
+}
+
+.snakeBody {
+    background: #e5e5e5;
+}
+
+.snakeHead {
+    background: #9b0013;
+}
+
+.disabled {
+    background: #7c7c7c;
+}
+
+.disabled:hover {
+    background: #7c7c7c;
+}
+
+#game-param {
+    margin: 0 auto;
+    background-color: green;
+    width: 380px;
+    display: flex;
+    justify-content: space-around;
+}
+
+span {
+    background: green;
+    color: white;
+    display: inline-block;
+    min-height: 19px;
+}
+
+select {
+    background: green;
+    border-color: green;
+}
+
+#game-panel {
+    margin: 50px auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+
+.left-or-right {
+    display: flex;
+    justify-content: center;
+}
+
+#up {
+    width: 60px;
+    height: 60px;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#left {
+    width: 60px;
+    height: 60px;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#right {
+    width: 60px;
+    height: 60px;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+#down {
+    width: 60px;
+    height: 60px;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.center {
+    background-color: #9b0013;
+    width: 60px;
+}
