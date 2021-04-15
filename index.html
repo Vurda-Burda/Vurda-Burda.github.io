@@ -31,7 +31,7 @@
             background-color: cornflowerblue;
         }
 
-        .examplePlus {
+        .example {
             display: block;
             margin: 0 auto;
             display: flex;
@@ -170,6 +170,11 @@
             font-size: 50px;
         }
 
+    .checkAnswer {
+        background-color:lightgray;
+        font-size: 50px;
+    }
+
 
 
 
@@ -182,7 +187,7 @@
          <div class="choiceText">Сложение</div>
     </header>
     <main>
-        <div class="examplePlus">
+        <div class="example">
         <div class="firstNumber"></div>
         <div class="plus">
         <div class="horizontalSing"></div>
@@ -194,7 +199,7 @@
             <div class="lineSecond"></div>
         </div>
         <input class="answer" type="number">
-        <button class="buttonAnswer">Проверить</button>
+        <div class="checkAnswer">Проверить</div>
         </div>
         <div class="statistics">
             <div class="right">Верно:<span class="rightAnswer"></span></div>
@@ -254,7 +259,7 @@
 
         window.addEventListener("load", createNumberPagePlus);
 
-        let button = document.querySelector(".buttonAnswer");
+        let button = document.querySelector(".checkAnswer");
         button.addEventListener("click", () => {
             if(firstNumber + secondNumber == document.querySelector(".answer").value && document.querySelector(".choiceText").innerText == "Сложение") {
                 document.querySelector(".answer").value = ""; 
