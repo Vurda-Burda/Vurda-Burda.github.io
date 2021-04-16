@@ -214,9 +214,9 @@
 
             if(document.querySelector(".choiceText").innerText == "Сложение") {
                 document.querySelector(".verticalSing").style.display = "none";
-                document.querySelector(".choiceText").innerText = "Вычетание";
+                document.querySelector(".choiceText").innerText = "Вычитание";
                 createNumberPageMinus();
-            } else if(document.querySelector(".choiceText").innerText == "Вычетание") {
+            } else if(document.querySelector(".choiceText").innerText == "Вычитание") {
                 document.querySelector(".verticalSing").style.display = "block";
                 document.querySelector(".choiceText").innerText = "Сложение";
                 createNumberPagePlus();
@@ -265,7 +265,7 @@
                 document.querySelector(".answer").value = ""; 
                 rightAnswer++;
                 createNumberPagePlus();
-        } else if(document.querySelector(".choiceText").innerText == "Вычетание" && firstNumber - secondNumber == document.querySelector(".answer").value) {
+        } else if(document.querySelector(".choiceText").innerText == "Вычитание" && firstNumber - secondNumber == document.querySelector(".answer").value) {
             document.querySelector(".answer").value = ""; 
             rightAnswer++;
             createNumberPageMinus();
@@ -282,7 +282,7 @@
                     createNumberPagePlus();
                     rightAnswer++;
                     document.querySelector(".rightAnswer").innerHTML = rightAnswer;
-            } else if(document.querySelector(".choiceText").innerText == "Вычетание" && firstNumber - secondNumber == document.querySelector(".answer").value) {
+            } else if(document.querySelector(".choiceText").innerText == "Вычитание" && firstNumber - secondNumber == document.querySelector(".answer").value) {
                 document.querySelector(".answer").value = ""; 
                 rightAnswer++;
                 createNumberPageMinus();
