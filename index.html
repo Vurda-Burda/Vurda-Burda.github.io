@@ -234,14 +234,16 @@
         function createNumberPagePlus () {
 
             firstNumber = Math.round(Math.random()*11);
-            document.querySelector(".firstNumber").innerHTML = firstNumber;
-            
             secondNumber = Math.round(Math.random()*11);
-            document.querySelector(".secondNumber").innerHTML = secondNumber;
 
+            if(firstNumber > secondNumber) {
+            document.querySelector(".secondNumber").innerHTML = secondNumber;
+            document.querySelector(".firstNumber").innerHTML = firstNumber;
             document.querySelector(".rightAnswer").innerHTML = rightAnswer;
             document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
-            
+            } else {
+                createNumberPageMinus();
+            };    
         };
 
          function createNumberPageMinus () {
