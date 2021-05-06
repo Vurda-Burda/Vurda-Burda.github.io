@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Змейка</title>
+    <title>Snake</title>
     <style>
         * {
     margin: 0;
     padding: 0;
     background: #2e353d;
 }
+
+body {
+    overflow-y: hidden;
+}
+
 
 .menuButton {
     width: 150px;
@@ -144,6 +149,12 @@ select {
     background-color: #9b0013;
     width: 60px;
 }
+
+#save-block {
+    width: 100%;
+    height: 19px;
+    display: none;
+}
     </style>
 </head>
 
@@ -155,6 +166,7 @@ select {
         <div id="playButton" class="menuButton">Старт</div>
         <div id="newGameButton" class="menuButton">Новая игра</div>
     </div>
+    <div id="save-block"></div>
     <div id="game-param">
         <div>
         <span>Speed:</span><select id="game-speed">
@@ -331,14 +343,21 @@ let status = {
 
     setPlaying() {
         this.condition = 'playing';
+        document.getElementById("game-param").style.display="none";
+        document.getElementById("save-block").style.display="block";
+
     },
 
     setStopped() {
         this.condition = 'stopped';
+        document.getElementById("game-param").style.display="flex";
+        document.getElementById("save-block").style.display="none";
     },
 
     setFinished() {
         this.condition = 'finished';
+        document.getElementById("game-param").style.display="flex";
+        document.getElementById("save-block").style.display="none";
     },
 
     isPlaying() {
@@ -466,6 +485,7 @@ let game = {
     tickHandler() {
         if (!this.canSnakeMakeStep()) {
             this.finish();
+            alert("Вы проиграли.")
             return;
         }
 
@@ -474,6 +494,7 @@ let game = {
             this.food.setFoodCoordinates(this.getRandomCoordinates());
             if (this.isGameWon()) {
                 this.finish();
+                alert("Вы победили!!!");
             }
         }
 
