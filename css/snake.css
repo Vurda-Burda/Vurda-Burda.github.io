@@ -210,7 +210,7 @@ select {
         }
     
         span {
-            font-size: 16px;
+            font-size: 17px;
         }
     
         #save-block {
@@ -218,10 +218,10 @@ select {
         }
 
         #game-speed {
-            size: 16px;
+            size: 17px;
         }
     
         #game-lenght {
-            size: 16px;
+            size: 17px;
         }
     
