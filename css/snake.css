@@ -162,13 +162,16 @@ select {
     }
 
     .menuButton {
-        width: 75px;
+        width: 80px;
         padding: 7px;
         margin: 5px;
         font-size: 15px;
     }
 
     #game-param {
-        width: 190px;
+        width: 200px;
     }
 
+    span {
+        font-size: 16px;
+    }
