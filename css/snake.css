@@ -179,3 +179,49 @@ select {
     #save-block {
         height: 19px;
     }
+
+    #game-speed {
+        size: 16px;
+    }
+
+    #game-lenght {
+        size: 16px;
+    }
+
+    @media (max-width: 375px) {
+
+        td.cell {
+            width: 10px;
+            height: 10px;
+            border: 1px dotted #eee;
+            border-collapse: collapse;
+    
+        }
+    
+        .menuButton {
+            width: 95px;
+            padding: 7px;
+            margin: 5px;
+            font-size: 15px;
+        }
+    
+        #game-param {
+            width: 230px;
+        }
+    
+        span {
+            font-size: 16px;
+        }
+    
+        #save-block {
+            height: 19px;
+        }
+
+        #game-speed {
+            size: 16px;
+        }
+    
+        #game-lenght {
+            size: 16px;
+        }
+    
