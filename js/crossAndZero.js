@@ -24,6 +24,7 @@ class TicTacToe {
             };
 
             this.status = "playing";
+            this.randomSelectionPhase();
 
 
     
@@ -35,7 +36,7 @@ class TicTacToe {
     init () {
 
          //Сдучайный выбор элемента для начала игры.
-         this.randomSelectionPhase();
+        this.randomSelectionPhase();
 
         //Выводит все ячейки.
         this.renderMap();
