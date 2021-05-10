@@ -10,24 +10,19 @@ class TicTacToe {
             [ "", "", "" ],
         ];
         this.phase = "";
-
+        this.figure = "";
     }
 
     newGamePlay () {
         this.clearGame.addEventListener("click", () => {
-    
             for(let i = 0; i < 3; i++) {
                 for(let g = 0; g <3; g++) {
                     this.gameTableElement.children[i].children[g].innerHTML = "";
                     this.mapValues[i][g] = "";
                 }
             };
-
             this.status = "playing";
             this.randomSelectionPhase();
-
-
-    
         });
     }
 
@@ -35,7 +30,7 @@ class TicTacToe {
     //Иницилизацяия игры.
     init () {
 
-         //Сдучайный выбор элемента для начала игры.
+        //Сдучайный выбор элемента для начала игры.
         this.randomSelectionPhase();
 
         //Выводит все ячейки.
@@ -44,10 +39,12 @@ class TicTacToe {
         //Инициализация обработчика событий.
         this.initEventHandlers();
 
+        //Новая игра.
         this.newGamePlay();
 
     }
 
+    //Случайный выбор нолики/крестика для игры.
     randomSelectionPhase() {
         let selectionPhase = Math.floor(Math.random()*3);
         if (selectionPhase > 0 && selectionPhase<3) {
@@ -57,7 +54,7 @@ class TicTacToe {
         }
 
     }
-
+    //Отрисовка игрового поля.
     renderMap() {
         for (let row = 0; row < 3; row++) {
             let tr = document.createElement("tr");
@@ -72,6 +69,7 @@ class TicTacToe {
         }
     }
 
+    //Клик по полю.
     initEventHandlers() {
         this.gameTableElement.addEventListener("click", event => this.cellClickHandler(event));
     }
@@ -84,10 +82,7 @@ class TicTacToe {
 
         this.fillCell(event);
 
-        if(this.hasWin()) {
-            this.setStatusStopped();
-            setTimeout(() => this.sayWinPhrase(), 200);
-        }
+        this.hasWin();
 
         this.oAutoRender();
 
@@ -107,20 +102,21 @@ class TicTacToe {
 
     //Проверяет сделан ли первый, ход.
     oAutoRender() {
+        if(this.figure === "Крестики" || this.figure === "Нолики") {
+            return;
+        } else {
         for (let i = 0; i < this.gameTableElement.childNodes.length; i++) {
             for (let g=0; g < this.gameTableElement.children.length; g++){
                 if(this.gameTableElement.children[i].children[g].innerHTML === "X" || this.gameTableElement.children[i].children[g].innerHTML === "O"){
                     this.togglePhase()
                     this.oAuto();
-                    if(this.hasWin()) {
-                        this.setStatusStopped();
-                        setTimeout(() => this.sayWinPhrase(), 200);
-                    };
+                    this.hasWin();
                     return;
                 };
             };
         };
-    }
+    };
+}
 
 
     //Проставляет ход.
@@ -227,22 +223,32 @@ class TicTacToe {
 
     //Проверяет, есть ли выиграшная ситуация на поле.
     hasWin(){
-        return this.isLineWin({ x: 0, y: 0 }, { x: 1, y: 0 }, { x: 2, y: 0 }) ||
-        this.isLineWin({ x: 0, y: 1 }, { x: 1, y: 1 }, { x: 2, y: 1 }) ||
-        this.isLineWin({ x: 0, y: 2 }, { x: 1, y: 2 }, { x: 2, y: 2 }) ||
+        if(this.mapValues[0][0] + this.mapValues[0][1] + this.mapValues[0][2] === "XXX" ||
+        this.mapValues[1][0] + this.mapValues[1][1] + this.mapValues[1][2] === "XXX" ||
+        this.mapValues[2][0] + this.mapValues[2][1] + this.mapValues[2][2] === "XXX" ||
+        this.mapValues[0][0] + this.mapValues[1][0] + this.mapValues[2][0] === "XXX" ||
+        this.mapValues[0][1] + this.mapValues[1][1] + this.mapValues[2][1] === "XXX" ||
+        this.mapValues[0][2] + this.mapValues[1][2] + this.mapValues[2][2] === "XXX" ||
+        this.mapValues[0][0] + this.mapValues[1][1] + this.mapValues[2][2] === "XXX" ||
+        this.mapValues[0][2] + this.mapValues[1][1] + this.mapValues[2][0] === "XXX") {
+            this.setStatusStopped();
+            this.figure = "Крестики";
+            setTimeout( () => this.sayWinPhrase(), 300);
+        };
 
-        this.isLineWin({ x: 0, y: 0 }, { x: 0, y: 1 }, { x: 0, y: 2 }) ||
-        this.isLineWin({ x: 1, y: 0 }, { x: 1, y: 1 }, { x: 1, y: 2 }) ||
-        this.isLineWin({ x: 2, y: 0 }, { x: 2, y: 1 }, { x: 2, y: 2 }) ||
+        if(this.mapValues[0][0] + this.mapValues[0][1] + this.mapValues[0][2] === "OOO" ||
+        this.mapValues[1][0] + this.mapValues[1][1] + this.mapValues[1][2] === "OOO" ||
+        this.mapValues[2][0] + this.mapValues[2][1] + this.mapValues[2][2] === "OOO" ||
+        this.mapValues[0][0] + this.mapValues[1][0] + this.mapValues[2][0] === "OOO" ||
+        this.mapValues[0][1] + this.mapValues[1][1] + this.mapValues[2][1] === "OOO" ||
+        this.mapValues[0][2] + this.mapValues[1][2] + this.mapValues[2][2] === "OOO" ||
+        this.mapValues[0][0] + this.mapValues[1][1] + this.mapValues[2][2] === "OOO" ||
+        this.mapValues[0][2] + this.mapValues[1][1] + this.mapValues[2][0] === "OOO") {
+            this.setStatusStopped();
+            this.figure = "Нолики";
+            setTimeout( () => this.sayWinPhrase(), 300);
+        };
 
-        this.isLineWin({ x: 0, y: 0 }, { x: 1, y: 1 }, { x: 2, y: 2 }) ||
-        this.isLineWin({ x: 0, y: 2 }, { x: 1, y: 1 }, { x: 2, y: 0 });
-    }
-
-    //Проверка, есть ли выиграшная ситуация на линии.
-    isLineWin(a, b, c) {
-        let value = this.mapValues[a.y][a.x] + this.mapValues[b.y][b.x] + this.mapValues[c.y][c.x];
-        return value === "XXX" || value === "OOO";
     }
 
     //Игра остановлена.
@@ -250,9 +256,10 @@ class TicTacToe {
         this.status = "stoped";
     }
 
+    //Сообщение о выиграше/проиграше.
     sayWinPhrase() {
-        let figure = this.phase === "X" ? "Нолики" : "Крестики";
-        alert(`${figure} выиграли!`);
+        alert(`${this.figure} выиграли!`);
+        this.figure = "";
     }
 
     //Меняет крестики на нолики.
