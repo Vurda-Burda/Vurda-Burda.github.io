@@ -58,6 +58,7 @@ tr {
 #layer {
     min-height: 20px;
 }
+}
 
 @media  (max-width: 576px) {
         

@@ -7,11 +7,6 @@ let snake = {
     
 
     init(startPoint, direction) {
-        // this.body = [
-        //     {x: 5, y: 5}, это голова
-        //     {x: 6, y: 5},
-        //     {x: 7, y: 5}
-        // ];
         this.body = [startPoint];
         this.lastStepDirection = direction;
         this.direction = direction;
@@ -35,16 +30,8 @@ let snake = {
     isBodyPoint(point) {
         return this.body.some(snakePoint => snakePoint.x === point.x && snakePoint.y === point.y);
     },
+
     makeStep() {
-        //Откуда стартуем
-        //[{x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}]
-
-        //Что у нас
-        //[{x: 4, y: 5}, {x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}]
-
-        //Что должны получить
-        //[{x: 4, y: 5}, {x: 5, y: 5}, {x: 6, y: 5}]
-
         this.lastStepDirection = this.direction;
         this.body.unshift(this.getNextStepHeadPoint());
         this.body.pop();
@@ -55,23 +42,10 @@ let snake = {
     },
 
     incrementBody() {
-        //сейчас, до того как сделаем шаг.
-        //[{x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}]
-
         let lastBodyIdx = this.body.length - 1;
         let lastBodyPoint = this.body[lastBodyIdx];
         let lastBodyPointClone = Object.assign({}, lastBodyPoint);
         this.body.push(lastBodyPointClone);
-
-        //как у нас до хода - добавляем еще такую же ячейку, чтобы при шаге последняя
-        //точка не была удалена
-        //[{x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}, {x: 7, y: 5}]
-
-        //когда делает шаг
-        //[{x: 4, y: 5}, {x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}]
-
-        //как должно быть после хода
-        //[{x: 4, y: 5}, {x: 5, y: 5}, {x: 6, y: 5}, {x: 7, y: 5}]
     }
 };
 
@@ -170,13 +144,11 @@ let settings = {
     snakeSpeed() {
         document.getElementById("game-speed").addEventListener("change", (e) => {
             this.speed =  Number(e.target.value);
-            console.log("Snake spped: "+this.speed);
     })},
 
     snakeLength() {
         document.getElementById("game-lenght").addEventListener("change", (e) => {
             this.winLength = Number(e.target.value);
-            console.log("Snake lenght: "+this.winLength);
         })
     },
 
@@ -380,12 +352,7 @@ let game = {
     },
 
     getRandomCoordinates() {
-        //без оператора spread
-        //[{x: 5, y: 5}, [{x: 5, y: 5}, {x: 5, y: 5}, {x: 5, y: 5}]]
-        //с оператором spread
-        //[{x: 5, y: 5}, {x: 5, y: 5}, {x: 5, y: 5}, {x: 5, y: 5}]
         let exclude = [this.food.getFoodCoordinates(), ...this.snake.body];
-        console.log(exclude);
         while (true) {
             //случайная точка в пределах игрового поля
             let rndPoint = {
@@ -400,7 +367,6 @@ let game = {
 
             //if (координата не содержится в массиве exclude) {}
             if (!excludeContainsRndPoint) {
-                console.log(rndPoint);
                 return rndPoint;
             }
         }
