@@ -1,0 +1,81 @@
+td {
+    width: 150px;
+    height: 150px;
+    background-color: grey;
+    margin: 5px;
+}
+
+tr {
+    font-size: 90px;
+    text-align: center;
+}
+
+#game-cross-zero {
+    padding: 0;
+    margin: 5% 0 0 0;
+}
+
+#game-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-game {
+    margin: 0 auto;
+    display: flex;
+    width: 200px;
+    height: 50px;
+    background-color: grey;
+    text-align: center;
+    font-size: 42px;
+}
+
+#layer {
+    width: 100%;
+    min-height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media  (max-width: 375px) {
+        
+    td {
+        width: 75px;
+        height: 75px;
+    }
+
+tr {
+    font-size: 45px;
+}
+.new-game {
+    width: 100px;
+    height: 25px;
+    font-size: 21px;
+}
+
+#layer {
+    min-height: 20px;
+}
+
+@media  (max-width: 576px) {
+        
+    td {
+        width: 75px;
+        height: 75px;
+    }
+
+tr {
+    font-size: 45px;
+}
+.new-game {
+    width: 100px;
+    height: 25px;
+    font-size: 21px;
+}
+
+#layer {
+    min-height: 20px;
+}
+}

@@ -1,0 +1,64 @@
+#choice-game {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.sNake {
+width: 150px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background: #007b32;
+    text-align: center;
+    cursor: pointer;
+}
+
+.crossZero {
+    width: 150px;
+        padding: 15px;
+        margin: 10px;
+        color: black;
+        background: grey;
+        text-align: center;
+        cursor: pointer;
+    }
+
+.snake {
+    display: none;
+}
+
+#cross-zero {
+    display: none;
+}
+
+    @media  (max-width: 375px) {
+        
+        .sNake {
+            width: 75px;
+            font-size: 15px;
+            height: 20px;
+    }
+
+    .crossZero {
+        width: 75px;
+        font-size: 10px;
+        height: 20px;
+    }
+}
+
+@media  (max-width: 576px) {
+        
+    .sNake {
+        width: 75px;
+        font-size: 15px;
+        height: 20px;
+}
+
+.crossZero {
+    width: 75px;
+    font-size: 10px;
+    height: 20px;
+}
+}
+        
+    

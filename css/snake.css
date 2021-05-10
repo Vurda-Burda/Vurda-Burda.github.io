@@ -5,8 +5,14 @@
 }
 
 body {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
+
+#game-wrap {
+    display: flex;
+    justify-content: center;
+}
+
 
 
 .menuButton {
@@ -25,7 +31,7 @@ body {
 
 #game {
     border-collapse: collapse;
-    margin: 2% auto 0;
+    margin: 5% 0 0 0;
 }
 
 #menu {
@@ -187,7 +193,7 @@ select {
     #game-lenght {
         size: 16px;
     }
-
+}
     @media (max-width: 375px) {
 
         td.cell {
@@ -224,4 +230,4 @@ select {
         #game-lenght {
             size: 17px;
         }
-    
+    }
