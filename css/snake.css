@@ -4,9 +4,9 @@
     background: #2e353d;
 }
 
-body {
+/* body {
     overflow-y: hidden;
-}
+} */
 
 #game-wrap {
     display: flex;
@@ -31,7 +31,7 @@ body {
 
 #game {
     border-collapse: collapse;
-    margin: 5% 0 0 0;
+    margin: 1% 0 0 0;
 }
 
 #menu {
@@ -87,7 +87,7 @@ select {
 }
 
 #game-panel {
-    margin: 50px auto;
+    margin: 10px auto;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -193,6 +193,13 @@ select {
     #game-lenght {
         size: 16px;
     }
+
+    #game {
+        margin: 5% 0 0 0;
+    }
+    #game-panel {
+        margin: 50px auto;
+    }
 }
     @media (max-width: 375px) {
 
@@ -229,5 +236,13 @@ select {
     
         #game-lenght {
             size: 17px;
+        }
+
+        #game {
+            margin: 5% 0 0 0;
+        }
+
+        #game-panel {
+            margin: 50px auto;
         }
     }

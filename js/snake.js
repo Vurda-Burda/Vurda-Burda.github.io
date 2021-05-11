@@ -4,7 +4,7 @@ let snake = {
     body: null,
     direction: null,
     lastStepDirection: null,
-    
+
 
     init(startPoint, direction) {
         this.body = [startPoint];
@@ -17,13 +17,13 @@ let snake = {
 
         switch (this.direction) {
             case 'up':
-                return {x: firstPoint.x, y: firstPoint.y - 1};
+                return { x: firstPoint.x, y: firstPoint.y - 1 };
             case 'down':
-                return {x: firstPoint.x, y: firstPoint.y + 1};
+                return { x: firstPoint.x, y: firstPoint.y + 1 };
             case 'right':
-                return {x: firstPoint.x + 1, y: firstPoint.y};
-            case 'left' :
-                return {x: firstPoint.x - 1, y: firstPoint.y};
+                return { x: firstPoint.x + 1, y: firstPoint.y };
+            case 'left':
+                return { x: firstPoint.x - 1, y: firstPoint.y };
         }
     },
 
@@ -73,7 +73,7 @@ let renderer = {
         for (let key of Object.getOwnPropertyNames(this.cells)) {
             this.cells[key].className = 'cell';
         }
-        
+
         snakePointArray.forEach((point, idx) => {
             this.cells[`x${point.x}_y${point.y}`].classList.add(idx === 0 ? 'snakeHead' : 'snakeBody');
         });
@@ -108,21 +108,21 @@ let status = {
 
     setPlaying() {
         this.condition = 'playing';
-        document.getElementById("game-param").style.display="none";
-        document.getElementById("save-block").style.display="block";
+        document.getElementById("game-param").style.display = "none";
+        document.getElementById("save-block").style.display = "block";
 
     },
 
     setStopped() {
         this.condition = 'stopped';
-        document.getElementById("game-param").style.display="flex";
-        document.getElementById("save-block").style.display="none";
+        document.getElementById("game-param").style.display = "flex";
+        document.getElementById("save-block").style.display = "none";
     },
 
     setFinished() {
         this.condition = 'finished';
-        document.getElementById("game-param").style.display="flex";
-        document.getElementById("save-block").style.display="none";
+        document.getElementById("game-param").style.display = "flex";
+        document.getElementById("save-block").style.display = "none";
     },
 
     isPlaying() {
@@ -143,8 +143,9 @@ let settings = {
 
     snakeSpeed() {
         document.getElementById("game-speed").addEventListener("change", (e) => {
-            this.speed =  Number(e.target.value);
-    })},
+            this.speed = Number(e.target.value);
+        })
+    },
 
     snakeLength() {
         document.getElementById("game-lenght").addEventListener("change", (e) => {
@@ -185,7 +186,7 @@ let game = {
     snake,
     tickInterval: null,
     pageSnakeSpeed: 5,
-    
+
 
     init(userSettings = {}) {
         this.settings.snakeSpeed();
@@ -273,10 +274,10 @@ let game = {
         let nextHeadPoint = this.snake.getNextStepHeadPoint();
 
         return !this.snake.isBodyPoint(nextHeadPoint) &&
-               nextHeadPoint.x < this.settings.colsCount &&
-               nextHeadPoint.y < this.settings.rowsCount &&
-               nextHeadPoint.x >= 0 &&
-               nextHeadPoint.y >= 0;
+            nextHeadPoint.x < this.settings.colsCount &&
+            nextHeadPoint.y < this.settings.rowsCount &&
+            nextHeadPoint.x >= 0 &&
+            nextHeadPoint.y >= 0;
     },
 
     setEventHandlers() {
@@ -314,9 +315,9 @@ let game = {
 
     canSetDirection(direction) {
         return direction === 'up' && this.snake.lastStepDirection !== 'down' ||
-               direction === 'right' && this.snake.lastStepDirection !== 'left' ||
-               direction === 'down' && this.snake.lastStepDirection !== 'up' ||
-               direction === 'left' && this.snake.lastStepDirection !== 'right';
+            direction === 'right' && this.snake.lastStepDirection !== 'left' ||
+            direction === 'down' && this.snake.lastStepDirection !== 'up' ||
+            direction === 'left' && this.snake.lastStepDirection !== 'right';
     },
 
     getDirectionByCode(code) {
@@ -335,7 +336,7 @@ let game = {
                 return 'left';
             default:
                 return '';
-          }
+        }
     },
 
     changePlayButton(textContent, isDisabled = false) {
@@ -367,10 +368,10 @@ let game = {
 
             //if (координата не содержится в массиве exclude) {}
             if (!excludeContainsRndPoint) {
+
                 return rndPoint;
             }
         }
     },
 };
-
 window.onload = () => game.init();

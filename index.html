@@ -11,6 +11,9 @@
     <script defer src="js/snake.js"></script>
     <script defer src="js/crossAndZero.js"></script>
     <script defer src="js/choicePanel.js"></script>
+    <script  src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script  src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>GAMES</title>
 </head>
 
@@ -20,60 +23,86 @@
         <div class="crossZero">Крестики/Нолики</div>
     </div>
     <div class="snake" style="display: none;">
-    <div id="game-wrap">
-        <table id="game"></table>
-    </div>
-    <div id="menu">
-        <div id="playButton" class="menuButton">Старт</div>
-        <div id="newGameButton" class="menuButton">Новая игра</div>
-    </div>
-    <div id="save-block"></div>
-    <div id="game-param">
-        <div>
-        <span>Скорость:</span><select id="game-speed">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-        </select>
+        <div id="game-wrap">
+            <table id="game"></table>
         </div>
-        <div>
-        <span>Длинна:</span><select id="game-lenght">
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
-            <option>20</option>
-            <option>25</option>
-            <option>30</option>
-            <option>35</option>
-            <option>40</option>
-            <option>45</option>
-            <option>50</option>
-        </select>
+        <div id="menu">
+            <div id="playButton" class="menuButton">Старт</div>
+            <div id="newGameButton" class="menuButton">Новая игра</div>
+        </div>
+        <div id="save-block"></div>
+        <div id="game-param">
+            <div>
+                <span>Скорость:</span><select id="game-speed">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div>
+                <span>Длинна:</span><select id="game-lenght">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>30</option>
+                    <option>35</option>
+                    <option>40</option>
+                    <option>45</option>
+                    <option>50</option>
+                </select>
+            </div>
+        </div>
+        <div id="game-panel">
+            <div id="up">Вверх</div>
+            <div class="left-or-right">
+                <div id="left">Лево</div>
+                <div class="center"></div>
+                <div id="right">Право</div>
+            </div>
+            <div id="down">Вниз</div>
         </div>
     </div>
-    <div id="game-panel">
-        <div id="up">Вверх</div>
-        <div class="left-or-right">
-            <div id="left">Лево</div>
-            <div class="center"></div>
-            <div id="right">Право</div>
+    <div class="cross-zero" style="display: none;">
+        <div id="game-position">
+            <table id="game-cross-zero"></table>
         </div>
-        <div id="down">Вниз</div>
+        <div id="layer"></div>
+        <div class="new-game">Новая игра</div>
     </div>
-    </div>
-<div class="cross-zero" style="display: none;">
-    <div id="game-position">
-    <table id="game-cross-zero"></table>
-    </div>
-    <div id="layer"></div>
-    <div class="new-game">Новая игра</div>
-    </div>
+    <div id="eagleAndTails"></div>
+    <script type="text/babel">
+  'use strict';
+
+    const element = React.createElement;
+
+    class EagleAndTails extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { liked: false };
+        }
+
+        render() {
+            if (this.state.liked) {
+                return 'You liked this.';
+            }
+
+            return (
+                <button onClick={() => this.setState({ liked: true })}>Нравится</button>
+            );
+        }
+    }
+
+    const domContainer = document.querySelector("#eagleAndTails");
+    ReactDOM.render(element(EagleAndTails), domContainer);
+    </script>
 </body>
 
 </html>
