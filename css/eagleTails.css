@@ -4,12 +4,16 @@
     ;
 }
 .circleCoin {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
     margin: 0 auto;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background-color: blue;
-    animation: coin-rotate 10s linear infinite;
+    animation: coin-rotate 400ms linear infinite;
 }
 @keyframes coin-rotate {
   from {
@@ -67,6 +71,12 @@
   margin: 50px auto;
   display: flex;
   justify-content: center;
+}
+
+span {
+  background-color: blue;
+  color: black;
+  font-size: 40px;
 }
 
 @media (max-width: 576px) {

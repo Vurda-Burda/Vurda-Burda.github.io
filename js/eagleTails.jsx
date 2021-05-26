@@ -10,9 +10,23 @@ document.querySelector(".eagle").addEventListener("click", () => {
     if((0 <= luckyNumber && luckyNumber < 3) || (5 < luckyNumber && luckyNumber <= 8)) {
         winCounter++;
         document.querySelector(".win").innerHTML = `Победа: ${winCounter}`;
+        document.querySelector(".circleCoin").innerHTML = `<span>Орёл</span>`;
+        document.querySelector(".circleCoin").style.animation = "none";
+        setTimeout(() => {
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
+            document.querySelector(".circleCoin").innerHTML = "";
+        }, 1000)
+
+
     } else {
         loseCounter++;
         document.querySelector(".lose").innerHTML = `Поражение: ${loseCounter}`;
+        document.querySelector(".circleCoin").innerHTML = `<span>Решка</span>`;
+        document.querySelector(".circleCoin").style.animation = "none";
+        setTimeout(() => {
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 400ms linear infinite";
+            document.querySelector(".circleCoin").innerHTML = "";
+        }, 1000)
     }
 });
 
@@ -21,9 +35,21 @@ document.querySelector(".tails").addEventListener("click", () => {
     if((3 <= luckyNumber && luckyNumber <= 5) || (8 < luckyNumber && luckyNumber <= 11)) {
         winCounter++;
         document.querySelector(".win").innerHTML = `Победа: ${winCounter}`;
+        document.querySelector(".circleCoin").innerHTML = `<span>Решка</span>`;
+        document.querySelector(".circleCoin").style.animation = "none";
+        setTimeout(() => {
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 400ms linear infinite";
+            document.querySelector(".circleCoin").innerHTML = "";
+        }, 1000)
     } else {
         loseCounter++;
         document.querySelector(".lose").innerHTML = `Поражение: ${loseCounter}`;
+        document.querySelector(".circleCoin").innerHTML = `<span>Орёл</span>`;
+        document.querySelector(".circleCoin").style.animation = "none";
+        setTimeout(() => {
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
+            document.querySelector(".circleCoin").innerHTML = "";
+        }, 1000)
     }
 });
 
