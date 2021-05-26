@@ -8,18 +8,16 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: yellowgreen;
-    animation: coin-rotate 5s linear infinite;
+    background-color: blue;
+    animation: coin-rotate 10s linear infinite;
 }
 @keyframes coin-rotate {
   from {
     transform: rotateY(0);
-    /* background-color: yellowgreen; */
   }
 
   to {
     transform: rotateY(180deg);
-    /* background-color: rosybrown; */
   }
 }
 
@@ -70,3 +68,79 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 576px) {
+
+  .circleCoin {
+      width: 100px;
+      height: 100px;
+
+  }
+
+  .eagle {
+      width: 90px;
+      padding: 7px;
+      margin: 5px;
+      font-size: 15px;
+  }
+
+  .tails {
+    width: 90px;
+    padding: 7px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.win {
+  width: 90px;
+  padding: 7px;
+  margin: 5px;
+  font-size: 15px;
+}
+
+.lose {
+  width: 90px;
+  padding: 7px;
+  margin: 5px;
+  font-size: 15px;
+}
+
+}
+  @media (max-width: 375px) {
+
+
+  .circleCoin {
+    width: 100px;
+    height: 100px;
+
+}
+
+.eagle {
+    width: 90px;
+    padding: 7px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.tails {
+  width: 90px;
+  padding: 7px;
+  margin: 5px;
+  font-size: 15px;
+}
+
+.win {
+width: 90px;
+padding: 7px;
+margin: 5px;
+font-size: 15px;
+}
+
+.lose {
+width: 90px;
+padding: 7px;
+margin: 5px;
+font-size: 15px;
+}
+
+  }
