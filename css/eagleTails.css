@@ -70,6 +70,11 @@
 }
 
 @media (max-width: 576px) {
+  .eagleTails {
+  width: 75px;
+  font-size: 14px;
+  height: 20px;
+  }
 
   .circleCoin {
       width: 100px;
@@ -107,6 +112,12 @@
 
 }
   @media (max-width: 375px) {
+
+    .eagleTails {
+      width: 75px;
+      font-size: 14px;
+      height: 20px;
+      }
 
 
   .circleCoin {
