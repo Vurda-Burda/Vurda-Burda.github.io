@@ -24,7 +24,7 @@ document.querySelector(".eagle").addEventListener("click", () => {
         document.querySelector(".circleCoin").innerHTML = `<span>Решка</span>`;
         document.querySelector(".circleCoin").style.animation = "none";
         setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 400ms linear infinite";
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
             document.querySelector(".circleCoin").innerHTML = "";
         }, 1000)
     }
@@ -38,7 +38,7 @@ document.querySelector(".tails").addEventListener("click", () => {
         document.querySelector(".circleCoin").innerHTML = `<span>Решка</span>`;
         document.querySelector(".circleCoin").style.animation = "none";
         setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 400ms linear infinite";
+            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
             document.querySelector(".circleCoin").innerHTML = "";
         }, 1000)
     } else {
