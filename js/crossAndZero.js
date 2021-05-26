@@ -30,11 +30,11 @@ class TicTacToe {
     //Иницилизацяия игры.
     init() {
 
+         //Выводит все ячейки.
+         this.renderMap();
+
         //Сдучайный выбор элемента для начала игры.
         this.randomSelectionPhase();
-
-        //Выводит все ячейки.
-        this.renderMap();
 
         //Инициализация обработчика событий.
         this.initEventHandlers();
@@ -51,6 +51,9 @@ class TicTacToe {
             this.phase = "X";
         } else {
             this.phase = "O";
+            this.mapValues[1][1] = this.phase;
+            this.gameTableElement.children[1].children[1].innerHTML = this.phase;
+            this.togglePhase();
         }
 
     }

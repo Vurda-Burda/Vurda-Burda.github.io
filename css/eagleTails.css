@@ -1,0 +1,72 @@
+.eagle-tails {
+    height: auto;
+    margin: 50px auto
+    ;
+}
+.circleCoin {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+    animation: coin-rotate 5s linear infinite;
+}
+@keyframes coin-rotate {
+  from {
+    transform: rotateY(0);
+    /* background-color: yellowgreen; */
+  }
+
+  to {
+    transform: rotateY(180deg);
+    /* background-color: rosybrown; */
+  }
+}
+
+.eagle {
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  background: yellowgreen;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tails {
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  background: yellowgreen;
+  text-align: center;
+  cursor: pointer;
+}
+
+#choiceButton {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.win {
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  background: yellowgreen;;
+  text-align: center;
+  cursor: pointer;
+}
+
+.lose {
+  width: 150px;
+  padding: 15px;
+  margin: 10px;
+  background: yellowgreen;;
+  text-align: center;
+  cursor: pointer;
+}
+
+#winOrLose {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}

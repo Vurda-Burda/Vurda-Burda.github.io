@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="css/snake.css">
     <link rel="stylesheet" href="css/crossAndZero.css">
     <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/eagleTails.css">
     <script defer src="js/snake.js"></script>
     <script defer src="js/crossAndZero.js"></script>
     <script defer src="js/choicePanel.js"></script>
-    <script  src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script  src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script defer src="js/eagleTails.jsx"></script>
     <title>GAMES</title>
 </head>
 
 <body>
     <div id="choice-game">
         <div class="sNake">Змейка</div>
+        <div class="eagleTails">Орёл/Решка</div>
         <div class="crossZero">Крестики/Нолики</div>
     </div>
     <div class="snake" style="display: none;">
@@ -77,32 +77,17 @@
         <div id="layer"></div>
         <div class="new-game">Новая игра</div>
     </div>
-    <div id="eagleAndTails"></div>
-    <script type="text/babel">
-  'use strict';
-
-    const element = React.createElement;
-
-    class EagleAndTails extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = { liked: false };
-        }
-
-        render() {
-            if (this.state.liked) {
-                return 'You liked this.';
-            }
-
-            return (
-                <button onClick={() => this.setState({ liked: true })}>Нравится</button>
-            );
-        }
-    }
-
-    const domContainer = document.querySelector("#eagleAndTails");
-    ReactDOM.render(element(EagleAndTails), domContainer);
-    </script>
+    <div class="eagle-tails" style="display: none;">
+       <div class="circleCoin"></div>
+       <div id="choiceButton">
+        <div  class="eagle">Орёл</div>
+        <div  class="tails">Решка</div>
+    </div>
+    <div id="winOrLose">
+        <div  class="win">Победа: 0</div>
+        <div  class="lose">Проиграл: 0</div>
+    </div>
+    </div>
 </body>
 
 </html>
