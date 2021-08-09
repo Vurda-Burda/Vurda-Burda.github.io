@@ -1,61 +1,81 @@
 "use strict"
 
-let luckyNumber;
-let winCounter = 0;
-let loseCounter = 0
-
-
-document.querySelector(".eagle").addEventListener("click", () => {
-    luckyNumber = Math.round(Math.random()*10);
-    if((0 <= luckyNumber && luckyNumber < 3) || (5 < luckyNumber && luckyNumber <= 8)) {
-        winCounter++;
-        document.querySelector(".win").innerHTML = `Победа: ${winCounter}`;
-        document.querySelector(".circleCoin").innerHTML = `<span class="spanEagleTails">Орёл</span>`;
-        document.querySelector(".circleCoin").style.animation = "none";
-        setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
-            document.querySelector(".circleCoin").innerHTML = "";
-        }, 1000)
-
-
-    } else {
-        loseCounter++;
-        document.querySelector(".lose").innerHTML = `Поражение: ${loseCounter}`;
-        document.querySelector(".circleCoin").innerHTML = `<span class="spanEagleTails">Решка</span>`;
-        document.querySelector(".circleCoin").style.animation = "none";
-        setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
-            document.querySelector(".circleCoin").innerHTML = "";
-        }, 1000)
+let eagleTails = {
+    //Счётчики
+        luckyNumber: null,
+        winCounter: 0,
+        loseCounter: 0,
+    //Элементы игры
+        eagleButton: document.querySelector(".eagle"),
+        tailsButton: document.querySelector(".tails"),
+        win: document.querySelector(".win"),
+        coin: document.querySelector(".circleCoin"),
+        lose:  document.querySelector(".lose"),
+        //Клик по кнопке орёл
+        clickEagleBitton () {
+            this.eagleButton.addEventListener("click", () => {
+                console.log("eagle")
+                this.luckyNumber = Math.round(Math.random()*10);
+                console.log(this.luckyNumber)
+                if((0 <= this.luckyNumber && this.luckyNumber < 3) || (5 < this.luckyNumber && this.luckyNumber <= 8)) {
+                    this.winCounter++;
+                    this.win.innerHTML = `Победа: ${this.winCounter}`;
+                    this.coin.innerHTML = `<span class="spanEagleTails">Орёл</span>`;
+                    this.coin.style.animation = "none";
+                    setTimeout(() => {
+                        this.coin.style.animation = "coin-rotate 500ms linear infinite";
+                        this.coin.innerHTML = "";
+                    }, 1000) } else {
+                        this.loseCounter++;
+                        this.lose.innerHTML = `Поражение: ${this.loseCounter}`;
+                        this.coin.innerHTML = `<span class="spanEagleTails">Решка</span>`;
+                        this.coin.style.animation = "none";
+                        setTimeout(() => {
+                            this.coin.style.animation = "coin-rotate 500ms linear infinite";
+                            this.coin.innerHTML = "";
+                        }, 1000)
+                    }
+                });
+        },
+        //Клик по кнопке решка
+        clickTailsButton () {
+            this.tailsButton.addEventListener("click", () => {
+                console.log("tails")
+                this.luckyNumber = Math.round(Math.random()*10);
+                console.log(this.luckyNumber)
+                if((3 <= this.luckyNumber && this.luckyNumber <= 5) || (8 < this.luckyNumber && this.luckyNumber <= 11)) {
+                    this.winCounter++;
+                    this.win.innerHTML = `Победа: ${this.winCounter}`;
+                    this.coin.innerHTML = `<span class="spanEagleTails">Решка</span>`;
+                    this.coin.style.animation = "none";
+                    setTimeout(() => {
+                        this.coin.style.animation = "coin-rotate 500ms linear infinite";
+                        this.coin.innerHTML = "";
+                    }, 1000)
+                } else {
+                    this.loseCounter++;
+                    this.lose.innerHTML = `Поражение: ${this.loseCounter}`;
+                    this.coin.innerHTML = `<span class="spanEagleTails">Орёл</span>`;
+                    this.coin.style.animation = "none";
+                    setTimeout(() => {
+                        this.coin.style.animation = "coin-rotate 500ms linear infinite";
+                        this.coin.innerHTML = "";
+                    }, 1000)
+                }
+            });
+        },
+        //Клик по монетке
+        clickCoin () {
+                this.coin.addEventListener("click", () => {
+                console.log("coin")
+                this.winCounter = 0;
+                this.loseCounter = 0;
+                this.win.innerHTML = `Победа: ${this.winCounter}`;
+                this.lose.innerHTML = `Поражение: ${this.loseCounter}`;
+            });
+            this.clickEagleBitton();
+            this.clickTailsButton();
+        }
     }
-});
 
-document.querySelector(".tails").addEventListener("click", () => {
-    luckyNumber = Math.round(Math.random()*10);
-    if((3 <= luckyNumber && luckyNumber <= 5) || (8 < luckyNumber && luckyNumber <= 11)) {
-        winCounter++;
-        document.querySelector(".win").innerHTML = `Победа: ${winCounter}`;
-        document.querySelector(".circleCoin").innerHTML = `<span class="spanEagleTails">Решка</span>`;
-        document.querySelector(".circleCoin").style.animation = "none";
-        setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
-            document.querySelector(".circleCoin").innerHTML = "";
-        }, 1000)
-    } else {
-        loseCounter++;
-        document.querySelector(".lose").innerHTML = `Поражение: ${loseCounter}`;
-        document.querySelector(".circleCoin").innerHTML = `<span class="spanEagleTails">Орёл</span>`;
-        document.querySelector(".circleCoin").style.animation = "none";
-        setTimeout(() => {
-            document.querySelector(".circleCoin").style.animation = "coin-rotate 500ms linear infinite";
-            document.querySelector(".circleCoin").innerHTML = "";
-        }, 1000)
-    }
-});
-
-document.querySelector(".circleCoin").addEventListener("click", () => {
-    winCounter = 0;
-    loseCounter = 0;
-    document.querySelector(".win").innerHTML = `Победа: ${winCounter}`;
-    document.querySelector(".lose").innerHTML = `Поражение: ${loseCounter}`;
-});
+    eagleTails.clickCoin(); 

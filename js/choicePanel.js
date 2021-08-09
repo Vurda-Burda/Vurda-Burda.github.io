@@ -1,32 +1,53 @@
 "use strict"
 
-document.querySelector(".sNake").addEventListener("click", () => {
-    if (document.querySelector(".snake").style.display == "none") {
-        document.querySelector(".snake").style.display = "block";
-        document.querySelector(".cross-zero").style.display = "none";
-        document.querySelector(".eagle-tails").style.display = "none";
-
-    } else if (document.querySelector(".snake").style.display == "block") {
-        document.querySelector(".snake").style.display = "none";
-    };
-});
-
-document.querySelector(".crossZero").addEventListener("click", () => {
-    if (document.querySelector(".cross-zero").style.display == "none") {
-        document.querySelector(".cross-zero").style.display = "block";
-        document.querySelector(".snake").style.display = "none";
-        document.querySelector(".eagle-tails").style.display = "none";
-    } else if (document.querySelector(".cross-zero").style.display == "block") {
-        document.querySelector(".cross-zero").style.display = "none";
-    };
-});
-
-document.querySelector(".eagleTails").addEventListener("click", () => {
-    if (document.querySelector(".eagle-tails").style.display == "none") {
-        document.querySelector(".eagle-tails").style.display = "block";
-        document.querySelector(".snake").style.display = "none";
-        document.querySelector(".cross-zero").style.display = "none"
-    } else if (document.querySelector(".eagle-tails").style.display == "block"){
-        document.querySelector(".eagle-tails").style.display = "none";
+let choicePannel =  {
+    //Элементы управление
+        snakeButton: document.querySelector(".sNake"),
+        snakeGame: document.querySelector(".snake"),
+        crossZeroButton: document.querySelector(".crossZero"),
+        crossZeroGame: document.querySelector(".cross-zero"),
+        eagleTailsButton: document.querySelector(".eagleTails"),
+        eagleTailsGame: document.querySelector(".eagle-tails"),
+    //Кнопка змейки
+    choicePannelSnake () {
+        this.snakeButton.addEventListener("click", () => {
+            if (this.snakeGame.style.display == "none") {
+                this.snakeGame.style.display = "block";
+                this.crossZeroGame.style.display = "none";
+                this.eagleTailsGame.style.display = "none";
+            } else if 
+            (this.snakeGame.style.display == "block") {
+                this.snakeGame.style.display = "none";
+            };
+        });
+    },
+    //Кнопка крестиков и ноликов
+    choicePannelCrossZero () {
+        this.crossZeroButton.addEventListener("click", () => {
+            if (this.crossZeroGame.style.display == "none") {
+                this.crossZeroGame.style.display = "block";
+                this.snakeGame.style.display = "none";
+                this.eagleTailsGame.style.display = "none";
+            } else if (this.crossZeroGame.style.display == "block") {
+                this.crossZeroGame.style.display = "none";
+            };
+        });
+    },
+    //Кнопка орла и решки
+    choicePannelEagleTails () {
+        this.eagleTailsButton.addEventListener("click", () => {
+            if (this.eagleTailsGame.style.display == "none") {
+                this.eagleTailsGame.style.display = "block";
+                this.snakeGame.style.display = "none";
+                this.crossZeroGame.style.display = "none"
+            } else if (this.eagleTailsGame.style.display == "block"){
+                this.eagleTailsGame.style.display = "none";
+            }
+        });
+        this.choicePannelCrossZero();
+        this.choicePannelSnake();
     }
-});
+}
+
+choicePannel.choicePannelEagleTails();
+

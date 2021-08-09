@@ -1,17 +1,15 @@
 
-class TicTacToe {
-    constructor() {
-        this.clearGame = document.querySelector(".new-game");
-        this.gameTableElement = document.getElementById("game-cross-zero");
-        this.status = "playing";
-        this.mapValues = [
+let ticTacToe = {
+        clearGame: document.querySelector(".new-game"),
+        gameTableElement: document.getElementById("game-cross-zero"),
+        status: "playing",
+        mapValues: [
             ["", "", ""],
             ["", "", ""],
             ["", "", ""],
-        ];
-        this.phase = "";
-        this.figure = "";
-    }
+        ],
+        phase: "",
+        figure: "",
 
     newGamePlay() {
         this.clearGame.addEventListener("click", () => {
@@ -24,7 +22,7 @@ class TicTacToe {
             this.status = "playing";
             this.randomSelectionPhase();
         });
-    }
+    },
 
 
     //Иницилизацяия игры.
@@ -42,7 +40,7 @@ class TicTacToe {
         //Новая игра.
         this.newGamePlay();
 
-    }
+    },
 
     //Случайный выбор нолики/крестика для игры.
     randomSelectionPhase() {
@@ -56,7 +54,7 @@ class TicTacToe {
             this.togglePhase();
         }
 
-    }
+    },
     //Отрисовка игрового поля.
     renderMap() {
         for (let row = 0; row < 3; row++) {
@@ -70,12 +68,12 @@ class TicTacToe {
                 tr.appendChild(td);
             }
         }
-    }
+    },
 
     //Клик по полю.
     initEventHandlers() {
         this.gameTableElement.addEventListener("click", event => this.cellClickHandler(event));
-    }
+    },
 
     //Обработчик события клика.
     cellClickHandler(event) {
@@ -91,17 +89,17 @@ class TicTacToe {
 
         this.togglePhase();
 
-    }
+    },
 
     //Проверка был ли корректный клик, что описан в событие event.
     isCorrectClick(event) {
         return this.isStatusPlaying() && this.isClickByCell(event) && this.isCellEmpty(event);
-    }
+    },
 
     //Проверка,что игра не закончена.
     isStatusPlaying() {
         return this.status === "playing";
-    }
+    },
 
     //Проверяет сделан ли первый, ход.
     oAutoRender() {
@@ -119,7 +117,7 @@ class TicTacToe {
                 };
             };
         };
-    }
+    },
 
 
     //Проставляет ход.
@@ -201,19 +199,19 @@ class TicTacToe {
         } else {
             this.oAuto();
         };
-    }
+    },
 
     //Проверка того, что клик был по ячкейки.
     isClickByCell(event) {
         return event.target.tagName === "TD";
-    }
+    },
 
     //Проверка, что ячейка пустая.
     isCellEmpty(event) {
         let row = +event.target.dataset.row;
         let col = +event.target.dataset.col;
         return this.mapValues[row][col] === "";
-    }
+    },
 
     //Заполняет ячейку в которую произошёл клик.
     fillCell(event) {
@@ -221,7 +219,7 @@ class TicTacToe {
         let col = +event.target.dataset.col;
         this.mapValues[row][col] = this.phase;
         event.target.textContent = this.phase;
-    }
+    },
 
 
     //Проверяет, есть ли выиграшная ситуация на поле.
@@ -252,18 +250,18 @@ class TicTacToe {
             setTimeout(() => this.sayWinPhrase(), 300);
         };
 
-    }
+    },
 
     //Игра остановлена.
     setStatusStopped() {
         this.status = "stoped";
-    }
+    },
 
     //Сообщение о выиграше/проиграше.
     sayWinPhrase() {
         alert(`${this.figure} выиграли!`);
         this.figure = "";
-    }
+    },
 
     //Меняет крестики на нолики.
     togglePhase() {
@@ -275,5 +273,4 @@ class TicTacToe {
     }
 }
 
-const ticTacToe = new TicTacToe();
 ticTacToe.init();
