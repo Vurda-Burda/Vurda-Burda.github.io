@@ -1955,9 +1955,9 @@ body {
         min-height: auto;
         position: absolute;
         top:96px;
-        left: 73%;
+        left: 66.5%;
         overflow-x: hidden;
-
+        border-radius: 5px;
     }
 
     .website_list {
