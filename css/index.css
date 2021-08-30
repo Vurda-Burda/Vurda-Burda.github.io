@@ -30,3 +30,26 @@ body {
     text-align: center;
     text-decoration: none;
 }
+
+@media (max-width: 576px) {
+
+    body {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .Games {
+        margin: 200px 0 0 0;
+        width: 350px;
+        height: 43px;
+        font-size: 35px;
+       
+    }
+    
+    .Website {
+        margin: 100px 0 0 0;
+        width: 350px;
+        height: 43px;
+        font-size: 35px;
+    }
+}
