@@ -1,93 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/snake.css">
-    <link rel="stylesheet" href="css/crossAndZero.css">
-    <link rel="stylesheet" href="css/panel.css">
-    <link rel="stylesheet" href="css/eagleTails.css">
-    <script defer src="js/snake.js"></script>
-    <script defer src="js/crossAndZero.js"></script>
-    <script defer src="js/choicePanel.js"></script>
-    <script defer src="js/eagleTails.jsx"></script>
-    <title>GAMES</title>
+    <title>Сhoice</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-
 <body>
-    <div id="choice-game">
-        <div class="sNake">Змейка</div>
-        <div class="eagleTails">Орёл/Решка</div>
-        <div class="crossZero">Крестики/Нолики</div>
-    </div>
-    <div class="snake" style="display: none;">
-        <div id="game-wrap">
-            <table id="game"></table>
-        </div>
-        <div id="menu">
-            <div id="playButton" class="menuButton">Старт</div>
-            <div id="newGameButton" class="menuButton">Новая игра</div>
-        </div>
-        <div id="save-block"></div>
-        <div id="game-param">
-            <div>
-                <span>Скорость:</span><select id="game-speed">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                </select>
-            </div>
-            <div>
-                <span>Длинна:</span><select id="game-lenght">
-                    <option>5</option>
-                    <option>10</option>
-                    <option>15</option>
-                    <option>20</option>
-                    <option>25</option>
-                    <option>30</option>
-                    <option>35</option>
-                    <option>40</option>
-                    <option>45</option>
-                    <option>50</option>
-                </select>
-            </div>
-        </div>
-        <div id="game-panel">
-            <div id="up">Вверх</div>
-            <div class="left-or-right">
-                <div id="left">Лево</div>
-                <div class="center"></div>
-                <div id="right">Право</div>
-            </div>
-            <div id="down">Вниз</div>
-        </div>
-    </div>
-    <div class="cross-zero" style="display: none;">
-        <div id="game-position">
-            <table id="game-cross-zero"></table>
-        </div>
-        <div id="layer"></div>
-        <div class="new-game">Новая игра</div>
-    </div>
-    <div class="eagle-tails" style="display: none;">
-       <div class="circleCoin"></div>
-       <div id="choiceButton">
-        <div  class="eagle">Орёл</div>
-        <div  class="tails">Решка</div>
-    </div>
-    <div id="winOrLose">
-        <div  class="win">Победа: 0</div>
-        <div  class="lose">Поражение: 0</div>
-    </div>
+    <div class="Choice">
+        <a class="Games" href="./games.html">Games(JS)</a>
+        <a class="Website" href="./website.html">Website(HTML5/CSS3)</a>
     </div>
 </body>
-
 </html>
