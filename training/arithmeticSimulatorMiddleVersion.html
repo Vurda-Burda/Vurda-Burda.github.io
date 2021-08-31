@@ -217,7 +217,12 @@
             display: none;
         }
 
-              @media (max-width: 576px) { 
+        @media (max-width: 576px) {
+
+            body {
+                width: 100%;
+                margin: 0 auto;
+            }
 
             .differentVariants {
                 flex-direction: column;
@@ -249,41 +254,43 @@
             <a href="./arithmeticSimulatorMiddleVersion.html">Средняя сложность</a>
             <a href="./arithmeticSimulatorHardVersion.html">Высокая сложность</a>
             <a href="./multiplicationSimulator.html">Умножение</a>
-            <div class="messageBlock" style="color: red; font-size: 30px; width: 50%; text-align: center; margin: 50px 0 0 0;">Дотспупно на планшете, ноутбуке или стационарном ПК!!!</div>
+            <div class="messageBlock"
+                style="color: red; font-size: 30px; width: 50%; text-align: center; margin: 50px 0 0 0;">Дотспупно на
+                планшете, ноутбуке или стационарном ПК!!!</div>
         </div>
 
- 
+
         <div class="mediaHide">
-        <button class="choiceButton">Переключатель знака арифметического действия</button>
-         <div class="choiceText">Сложение</div>
+            <button class="choiceButton">Переключатель знака арифметического действия</button>
+             <div class="choiceText">Сложение</div>
         </div>
     </header>
     <div class="mediaHide">
-    <main>
-        <div class="examplePlus">
-            <div class="firstNumber"></div>
-            <div class="plus">
-                <div class="horizontalSing"></div>
-                <div class="verticalSingFirst"></div>
+        <main>
+            <div class="examplePlus">
+                <div class="firstNumber"></div>
+                <div class="plus">
+                    <div class="horizontalSing"></div>
+                    <div class="verticalSingFirst"></div>
+                </div>
+                <div class="secondNumber"></div>
+                <div class="plus">
+                    <div class="horizontalSing"></div>
+                    <div class="verticalSingSecond"></div>
+                </div>
+                <div class="thirdNumber"></div>
+                <div class="equally">
+                    <div class="lineFirst"></div>
+                    <div class="lineSecond"></div>
+                </div>
+                <input class="answer" type="number">
+                <button class="buttonAnswer">Проверить</button>
             </div>
-            <div class="secondNumber"></div>
-            <div class="plus">
-                <div class="horizontalSing"></div>
-                <div class="verticalSingSecond"></div>
+            <div class="statistics">
+                <div class="right">Верно:<span class="rightAnswer"></span></div>
+                <div class="wrong">Не верно:<span class="wrongAnswer"></span></div>
             </div>
-            <div class="thirdNumber"></div>
-            <div class="equally">
-                <div class="lineFirst"></div>
-                <div class="lineSecond"></div>
-            </div>
-            <input class="answer" type="number">
-            <button class="buttonAnswer">Проверить</button>
-        </div>
-        <div class="statistics">
-            <div class="right">Верно:<span class="rightAnswer"></span></div>
-            <div class="wrong">Не верно:<span class="wrongAnswer"></span></div>
-        </div>
-    </main>
+        </main>
     </div>
     <footer></footer>
     <script>

@@ -190,7 +190,12 @@
             color: blue;
         }
 
-        @media (max-width: 576px) { 
+        @media (max-width: 576px) {
+
+            body {
+                width: 100%;
+                margin: 0 auto;
+            }
 
             .differentVariants {
                 flex-direction: column;
@@ -203,14 +208,12 @@
             }
 
             main {
-                width: 60%;
+                width: 95%;
                 margin: 0 auto;
                 margin-top: 20px;
             }
 
         }
-
-
     </style>
     <title>Тренажер по арифметике</title>
 </head>

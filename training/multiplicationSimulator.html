@@ -192,7 +192,11 @@
             color: blue;
         }
 
-            @media (max-width: 576px) { 
+        @media (max-width: 576px) {
+            body {
+                width: 100%;
+                margin: 0 auto;
+            }
 
             .differentVariants {
                 flex-direction: column;
@@ -205,7 +209,7 @@
             }
 
             main {
-                width: 65%;
+                width: 95%;
                 margin: 0 auto;
                 margin-top: 20px;
             }
@@ -299,12 +303,12 @@
                     rightAnswer++;
                     createNumberPage();
                 } else {
-                wrongAnswer++;
-                document.querySelector(".answer").value = "";
-                document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
-                console.log(firstNumber + "*" + secondNumber);
+                    wrongAnswer++;
+                    document.querySelector(".answer").value = "";
+                    document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
+                    console.log(firstNumber + "*" + secondNumber);
+                }
             }
-        }
         });
 
         document.addEventListener("keydown", (e) => {
