@@ -208,6 +208,32 @@
         a:hover {
             color: blue;
         }
+
+        .messageBlock {
+            display: none;
+        }
+
+              @media (max-width: 576px) { 
+
+            .differentVariants {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            a {
+                margin: 15px 0 0 0;
+                padding: 0;
+            }
+
+            .mediaHide {
+                display: none;
+            }
+
+            .messageBlock {
+                display: block;
+            }
+
+        }
     </style>
     <title>Тренажер по арифметике</title>
 </head>
@@ -219,11 +245,16 @@
             <a href="./arithmeticSimulatorMiddleVersion.html">Средняя сложность</a>
             <a href="./arithmeticSimulatorHardVersion.html">Высокая сложность</a>
             <a href="./multiplicationSimulator.html">Умножение</a>
-
+            <div class="messageBlock" style="color: red; font-size: 30px; width: 50%; text-align: center; margin: 50px 0 0 0;">Дотспупно на планшете, ноутбуке или стационарном ПК!!!</div>
         </div>
+
+ 
+        <div class="mediaHide">
         <button class="choiceButton">Переключатель знака арифметического действия</button>
          <div class="choiceText">Сложение</div>
+        </div>
     </header>
+    <div class="mediaHide">
     <main>
         <div class="examplePlus">
             <div class="firstNumber"></div>
@@ -249,6 +280,7 @@
             <div class="wrong">Не верно:<span class="wrongAnswer"></span></div>
         </div>
     </main>
+    </div>
     <footer></footer>
     <script>
         "use strict";
