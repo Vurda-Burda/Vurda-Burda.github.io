@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0 auto;
+            width: 720px;
+            padding: 0;
+            height: auto;
+        }
+
+        header {
+            width: 100%;
+            min-height: 300px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background-color: cornflowerblue;
+        }
+
+        .examplePlus {
+            display: block;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            padding: 0;
+        }
+
+        .firstNumber {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .multiplication {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .horizontalSing {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 30px;
+            left: 12px;
+            transform: rotate(45deg);
+        }
+
+        .verticalSing {
+            width: 5px;
+            height: 40px;
+            background-color: black;
+            position: absolute;
+            top: 12px;
+            left: 30px;
+            transform: rotate(45deg);
+        }
+
+        .secondNumber {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .equally {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .lineFirst {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        .lineSecond {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 40px;
+            left: 10px;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .answer {
+            width: 60px;
+            min-height: 60px;
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+        }
+
+        .statistics {
+            width: 100%;
+            min-height: auto;
+            margin: 50px 0 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right {
+            width: auto;
+            min-height: 60px;
+            margin: 0;
+            padding: 0;
+            background-color: green;
+            font-size: 50px;
+        }
+
+        .wrong {
+            width: auto;
+            min-height: 45px;
+            margin: 0;
+            padding: 0;
+            background-color: brown;
+            font-size: 36px;
+        }
+
+        .rightAnswer {
+            font-size: 50px;
+            margin: 0 0 0 10px;
+            padding: 0;
+        }
+
+        .wrongAnswer {
+            font-size: 35px;
+            margin: 0 0 0 15px;
+            padding: 0;
+        }
+
+        .choiceText {
+            background-color: bisque;
+            font-size: 50px;
+        }
+
+        .differentVariants {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 30px;
+        }
+
+        a {
+            font-size: 20px;
+            color: black;
+        }
+
+        a:hover {
+            color: blue;
+        }
+    </style>
+    <title>Тренажер по математике</title>
+</head>
+
+<body>
+    <header>
+        <div class="differentVariants">
+            <a href="./arithmeticSimulatorEasyVersion.html">Легкая сложность</a>
+            <a href="./arithmeticSimulatorMiddleVersion.html">Средняя сложность</a>
+            <a href="./arithmeticSimulatorHardVersion.html">Высокая сложность</a>
+            <a href="./multiplicationSimulator.html">Умножение</a>
+
+        </div>
+        <div>Выберите число для умножения <select id="numberMultiplication" size="1" value="Число для умножения">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+        </div>
+         <div class="choiceText">Умножение</div>
+    </header>
+    <main>
+        <div class="examplePlus">
+            <div class="firstNumber"></div>
+            <div class="multiplication">
+                <div class="horizontalSing"></div>
+                <div class="verticalSing"></div>
+            </div>
+            <div class="secondNumber"></div>
+            <div class="equally">
+                <div class="lineFirst"></div>
+                <div class="lineSecond"></div>
+            </div>
+            <input class="answer" type="number">
+            <button class="buttonAnswer">Проверить</button>
+        </div>
+        <div class="statistics">
+            <div class="right">Верно:<span class="rightAnswer"></span></div>
+            <div class="wrong">Не верно:<span class="wrongAnswer"></span></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script>
+        "use strict";
+
+        let firstNumber = 2;
+
+        let secondNumber;
+
+        let rightAnswer = 0;
+
+        let wrongAnswer = 0;
+
+        function createNumberPage() {
+
+            document.querySelector(".firstNumber").innerHTML = firstNumber;
+
+            document.getElementById("numberMultiplication").addEventListener("change", (e) => {
+                firstNumber = Number(e.target.value);
+                document.querySelector(".firstNumber").innerHTML = firstNumber;
+            });
+
+            secondNumber = Math.round(Math.random() * 11);
+
+            if (secondNumber > 10) {
+                createNumberPage();
+            } else {
+                document.querySelector(".secondNumber").innerHTML = secondNumber;
+            };
+            document.querySelector(".rightAnswer").innerHTML = rightAnswer;
+            document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
+
+        };
+
+
+        window.addEventListener("load", createNumberPage);
+
+        let button = document.querySelector(".buttonAnswer");
+        button.addEventListener("click", () => {
+            if (document.querySelector(".answer").value) {
+                if (firstNumber * secondNumber == document.querySelector(".answer").value)
+                    rightAnswer++;
+                createNumberPage();
+            } else {
+                wrongAnswer++;
+                document.querySelector(".answer").value = "";
+                document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
+                console.log(firstNumber + "*" + secondNumber);
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (event.code == "Enter" || event.code == "Space") {
+                if (document.querySelector(".answer").value) {
+                    if (firstNumber * secondNumber == document.querySelector(".answer").value) {
+                        document.querySelector(".answer").value = "";
+                        rightAnswer++;
+                        createNumberPage();
+                        document.querySelector(".rightAnswer").innerHTML = rightAnswer;
+                    } else {
+                        wrongAnswer++;
+                        document.querySelector(".answer").value = "";
+                        document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
+                        console.log(firstNumber + "*" + secondNumber);
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

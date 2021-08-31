@@ -10,7 +10,7 @@ body {
 }
 
 .Games {
-    margin: 150px 0 0 0;
+    margin: 100px 0 0 0;
     padding: 0;
     width: 850px;
     height: 100px;
@@ -18,10 +18,11 @@ body {
     background-color: green;
     text-align: center;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .Website {
-    margin: 150px 0 0 0;
+    margin: 100px 0 0 0;
     padding: 0;
     width: 850px;
     height: 100px;
@@ -29,6 +30,19 @@ body {
     background-color: gray;
     text-align: center;
     text-decoration: none;
+    border-radius: 10px;
+}
+
+.Training {
+    margin: 100px 0 0 0;
+    padding: 0;
+    width: 850px;
+    height: 200px;
+    font-size: 85px;
+    background-color: bisque;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
 }
 
 @media (max-width: 576px) {
@@ -39,7 +53,7 @@ body {
     }
 
     .Games {
-        margin: 200px 0 0 0;
+        margin: 150px 0 0 0;
         width: 350px;
         height: 43px;
         font-size: 35px;
@@ -51,5 +65,14 @@ body {
         width: 350px;
         height: 43px;
         font-size: 35px;
+    }
+
+    .Training {
+        margin: 100px 0 0 0;
+        padding: 0;
+        width: 350px;
+        height: 86px;
+        font-size: 35px;
+      
     }
 }
