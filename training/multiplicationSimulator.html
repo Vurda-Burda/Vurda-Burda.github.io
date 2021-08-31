@@ -356,6 +356,7 @@
         button.addEventListener("click", () => {
             if (document.querySelector(".answer").value) {
                 if (firstNumber * secondNumber == document.querySelector(".answer").value) {
+                    document.querySelector(".answer").value = "";
                     rightAnswer++;
                     createNumberPage();
                 } else {
