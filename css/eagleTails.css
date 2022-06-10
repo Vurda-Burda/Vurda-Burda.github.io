@@ -12,7 +12,8 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: blue;
+    background-image: url(../img/coin.png);
+    background-size: cover;
     animation: coin-rotate 500ms linear infinite;
 }
 @keyframes coin-rotate {
@@ -74,7 +75,7 @@
 }
 
 .spanEagleTails {
-  background-color: blue;
+  background: rgba(0, 0, 0, 0);
   color: black;
   font-size: 40px;
 }
