@@ -148,8 +148,10 @@ select {
 
 #save-block {
     width: 100%;
-    height: 19px;
+    height: 23.5px;
     display: none;
+    margin: 0;
+    padding: 0;
 }
 
 #game-speed {
@@ -168,10 +170,12 @@ select {
 
 #game-param > div:nth-child(1) {
     border: 2px solid green;
+    background-color: green;
 }
 
 #game-param > div:nth-child(2) {
     border: 2px solid green;
+    background-color: green;
 }
 
 
