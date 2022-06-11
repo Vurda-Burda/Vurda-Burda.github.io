@@ -152,7 +152,7 @@ select {
     display: none;
 }
 
-/* мобильная веррсия */
+/* мобильная версия */
 
 @media (max-width: 576px) {
 
@@ -231,7 +231,7 @@ select {
             size: 17px;
         }
     
-        #game-lenght {
+        #game-length {
             size: 17px;
         }
 

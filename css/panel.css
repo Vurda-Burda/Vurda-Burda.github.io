@@ -34,14 +34,6 @@ width: 150px;
         cursor: pointer;
     }
 
-.snake {
-display: none;
-}
-
-#cross-zero {
-display: none;
-}
-
 @media  (max-width: 375px) {
     
     .sNake {

@@ -12,7 +12,7 @@ let eagleTails = {
         coin: document.querySelector(".circleCoin"),
         lose:  document.querySelector(".lose"),
         //Клик по кнопке орёл
-        clickEagleBitton () {
+        clickEagleButton () {
             this.eagleButton.addEventListener("click", () => {
                 console.log("eagle")
                 this.luckyNumber = Math.round(Math.random()*10);
@@ -73,7 +73,7 @@ let eagleTails = {
                 this.win.innerHTML = `Победа: ${this.winCounter}`;
                 this.lose.innerHTML = `Поражение: ${this.loseCounter}`;
             });
-            this.clickEagleBitton();
+            this.clickEagleButton();
             this.clickTailsButton();
         }
     }

@@ -25,13 +25,13 @@ let ticTacToe = {
     },
 
 
-    //Иницилизацяия игры.
+    //Инициализация игры.
     init() {
 
          //Выводит все ячейки.
          this.renderMap();
 
-        //Сдучайный выбор элемента для начала игры.
+        //Случайный выбор элемента для начала игры.
         this.randomSelectionPhase();
 
         //Инициализация обработчика событий.
@@ -59,7 +59,7 @@ let ticTacToe = {
     renderMap() {
         for (let row = 0; row < 3; row++) {
             let tr = document.createElement("tr");
-            tr.style.bordercolor = "black";
+            tr.style.borderColor = "black";
             this.gameTableElement.appendChild(tr);
             for (let col = 0; col < 3; col++) {
                 let td = document.createElement("td");
@@ -201,7 +201,7 @@ let ticTacToe = {
         };
     },
 
-    //Проверка того, что клик был по ячкейки.
+    //Проверка того, что клик был по ячейки.
     isClickByCell(event) {
         return event.target.tagName === "TD";
     },
@@ -222,7 +222,7 @@ let ticTacToe = {
     },
 
 
-    //Проверяет, есть ли выиграшная ситуация на поле.
+    //Проверяет, есть ли выигрышная ситуация на поле.
     hasWin() {
         if (this.mapValues[0][0] + this.mapValues[0][1] + this.mapValues[0][2] === "XXX" ||
             this.mapValues[1][0] + this.mapValues[1][1] + this.mapValues[1][2] === "XXX" ||
@@ -257,7 +257,7 @@ let ticTacToe = {
         this.status = "stoped";
     },
 
-    //Сообщение о выиграше/проиграше.
+    //Сообщение о выигрыш/проигрыш.
     sayWinPhrase() {
         alert(`${this.figure} выиграли!`);
         this.figure = "";
