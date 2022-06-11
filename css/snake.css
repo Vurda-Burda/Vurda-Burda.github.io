@@ -152,6 +152,30 @@ select {
     display: none;
 }
 
+#game-speed {
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#game-lenght {
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#game-param > div:nth-child(1) {
+    border: 2px solid green;
+}
+
+#game-param > div:nth-child(2) {
+    border: 2px solid green;
+}
+
+
+
 /* мобильная версия */
 
 @media (max-width: 576px) {
@@ -176,7 +200,7 @@ select {
     }
 
     span {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     #save-block {
