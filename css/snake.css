@@ -207,9 +207,6 @@ select {
         font-size: 15px;
     }
 
-    #save-block {
-        height: 19px;
-    }
 
     #game-speed {
         size: 16px;
@@ -251,10 +248,6 @@ select {
             font-size: 18px;
         }
     
-        #save-block {
-            height: 19px;
-        }
-
         #game-speed {
             size: 17px;
         }
