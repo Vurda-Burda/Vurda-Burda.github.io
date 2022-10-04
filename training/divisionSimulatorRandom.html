@@ -322,7 +322,7 @@
             firstNumber = Math.round(Math.random() * 100);
             secondNumber = Math.round(Math.random() * 10);
 
-            if (firstNumber > 100 || secondNumber > 10 || firstNumber % secondNumber != 0 || firstNumber/secondNumber > 10) {
+            if (firstNumber > 90 || secondNumber > 10 || firstNumber % secondNumber != 0 || firstNumber/secondNumber > 10) {
                 createNumberPage();
             } else {
                 document.querySelector(".firstNumber").innerHTML = firstNumber;
@@ -348,7 +348,7 @@
                     wrongAnswer++;
                     document.querySelector(".answer").value = "";
                     document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
-                    console.log(firstNumber + "*" + secondNumber);
+                    console.log(firstNumber + "/" + secondNumber);
                 }
             }
         });
@@ -365,7 +365,7 @@
                         wrongAnswer++;
                         document.querySelector(".answer").value = "";
                         document.querySelector(".wrongAnswer").innerHTML = wrongAnswer;
-                        console.log(firstNumber + "*" + secondNumber);
+                        console.log(firstNumber + "/" + secondNumber);
                     };
                 }
             }
