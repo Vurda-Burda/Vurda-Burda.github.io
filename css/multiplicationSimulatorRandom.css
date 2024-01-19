@@ -1,0 +1,264 @@
+        body {
+            margin: 0 auto;
+            width: 720px;
+            padding: 0;
+            height: auto;
+        }
+
+        header {
+            width: 100%;
+            min-height: 300px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background-color: cornflowerblue;
+        }
+
+        .examplePlus {
+            display: block;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            padding: 0;
+        }
+
+        .firstNumber {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .multiplication {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .horizontalSing {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 30px;
+            left: 12px;
+            transform: rotate(45deg);
+        }
+
+        .verticalSing {
+            width: 5px;
+            height: 40px;
+            background-color: black;
+            position: absolute;
+            top: 12px;
+            left: 30px;
+            transform: rotate(45deg);
+        }
+
+        .secondNumber {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .equally {
+            width: 60px;
+            min-height: 60px;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .lineFirst {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        .lineSecond {
+            width: 40px;
+            height: 5px;
+            background-color: black;
+            position: absolute;
+            top: 40px;
+            left: 10px;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .answer {
+            width: 60px;
+            min-height: 60px;
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+        }
+
+        .statistics {
+            width: 100%;
+            min-height: auto;
+            margin: 50px 0 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right {
+            width: auto;
+            min-height: 60px;
+            margin: 0;
+            padding: 0;
+            background-color: green;
+            font-size: 50px;
+        }
+
+        .wrong {
+            width: auto;
+            min-height: 45px;
+            margin: 0;
+            padding: 0;
+            background-color: brown;
+            font-size: 36px;
+        }
+
+        .rightAnswer {
+            font-size: 50px;
+            margin: 0 0 0 10px;
+            padding: 0;
+        }
+
+        .wrongAnswer {
+            font-size: 35px;
+            margin: 0 0 0 15px;
+            padding: 0;
+        }
+
+        .choiceText {
+            background-color: bisque;
+            font-size: 50px;
+        }
+
+        .differentVariants {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 30px;
+        }
+
+        a {
+            font-size: 20px;
+            color: black;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .differentVariants {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            a {
+                margin: 15px 0 0 0;
+                padding: 0;
+            }
+
+            main {
+                width: 95%;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+
+            .firstNumber {
+            width: 40px;
+            min-height: 40px;
+            font-size: 40px;
+        }
+
+        .multiplication {
+            width: 40px;
+            min-height: 40px;
+        }
+
+        .horizontalSing {
+            width: 15px;
+            height: 5px;
+            top: 20px;
+            left: 5px;
+        }
+
+        .verticalSing {
+            width: 5px;
+            height: 15px;
+            top: 15px;
+            left: 10px;
+        }
+
+        .secondNumber {
+            width: 40px;
+            min-height: 40px;
+            font-size: 40px;
+        }
+
+        .equally {
+            width: 40px;
+            min-height: 40px;
+        }
+
+        .lineFirst {
+            width: 15px;
+            height: 5px;
+            top: 15px;
+            left: 4px;
+        }
+
+        .lineSecond {
+            width: 15px;
+            height: 5px;
+            top: 26px;
+            left: 4px;
+        }
+
+        .answer {
+            width: 50px;
+            min-height: 40px;
+            font-size: 40px;
+        }
+        }

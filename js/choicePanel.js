@@ -1,4 +1,3 @@
-"use strict"
 
 let choicePanel =  {
     //Элементы управление
